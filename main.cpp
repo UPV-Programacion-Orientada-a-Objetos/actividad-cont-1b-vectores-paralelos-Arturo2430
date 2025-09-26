@@ -33,7 +33,7 @@ int main() {
     int caso;
     bool loop = true;
     std::cout << "--- Bienvenido al Sistema de Inventario de El Martillo ---" << std::endl;
-    std::string nombre_archivo = "inventario.txt";
+    std::string nombre_archivo = "inventario.csv";
 
     // Lectura de archivo
     leer_archivo(nombre_archivo);
@@ -68,7 +68,6 @@ int main() {
                 break;
         }
     } while (loop);
-
 
     return 0;
 }
@@ -109,10 +108,10 @@ void leer_archivo(std::string nombre) {
             std::string codigo_string, nombre, cantidad_string, precio_string, ubicacion;
 
             std::getline(ss, codigo_string, delim);
+            std::getline(ss, ubicacion, delim);
             std::getline(ss, nombre, delim);
             std::getline(ss, cantidad_string, delim);
             std::getline(ss, precio_string, delim);
-            std::getline(ss, ubicacion, delim);
 
             try {
                 int codigo_aux = std::stoi(codigo_string);
@@ -129,6 +128,10 @@ void leer_archivo(std::string nombre) {
                     std::cerr << "WARNING: Valores negativos dentro de la linea: " << contador_linea << ": " << line << ". Se ha omitido la linea." << std::endl;
                     contador_linea++;
                     continue;
+                }
+
+                if (stock_aux > 50) {
+                    std::cerr << "WARNING: Hay sobre stock de el producto: " << nombre << std::endl;
                 }
 
                 prod_codigos[contador_productos] = std::stoi(codigo_string);
@@ -164,12 +167,12 @@ void guardar_archivo(std::string nombre_archivo) {
     std::ofstream archivo;
     archivo.open(nombre_archivo);
     if (archivo.is_open()) {
-        archivo << "Código,Nombre,Cantidad,Precio,Ubicación\n";
+        archivo << "Código,Ubicacion,Nombre,Cantidad,Precio\n";
         for (int i = 0; i < productos_existentes; i++) {
             std::stringstream ss;
             ss << std::fixed << std::setprecision(2) << precios_unitarios[i];
             std::string precio = ss.str();
-            std::string line = std::to_string(prod_codigos[i]) + "," + prod_nombres[i] + "," + std::to_string(stocks[i]) + "," + precio + "," + cod_ubicacion[i] + "\n";
+            std::string line = std::to_string(prod_codigos[i]) + "," + cod_ubicacion[i] + "," + prod_nombres[i] + "," + std::to_string(stocks[i]) + "," + precio + "\n";
             archivo << line;
         }
         archivo.close();
@@ -228,6 +231,7 @@ void actualiza_inventario(int index, int num) {
             std::cout << "El stock restante no puede ser negativo. Ingrese otro numero: ";
             num = verificar_numero_entero(std::cin);
         }
+
     } while (aux < 0);
     stocks[index] += num;
     std::cout << "Nuevo stock: " << stocks[index] << std::endl;
@@ -428,9 +432,12 @@ void encontrar_producto_mas_barato() {
 }
 
 void reporte_bajo_stock() {
+    int umbral;
+    std::cout << "Ingrese el umbral: ";
+    umbral = verificar_numero_entero(std::cin);
     std::cout << "\n--- Reporte de Productos con Bajo Stock ---" << std::endl;
     for (int i = 0 ; i < productos_existentes; i++) {
-        if (stocks[i] <= 10) {
+        if (stocks[i] <= umbral) {
             std::cout << "Nombre: " + prod_nombres[i] + ", Stock: " << stocks[i] << std::endl;
         }
     }

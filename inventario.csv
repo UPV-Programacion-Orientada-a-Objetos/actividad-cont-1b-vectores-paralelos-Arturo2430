@@ -1,0 +1,52 @@
+Código,Ubicacion,Nombre,Cantidad,Precio
+101,A-01,Martillo de bola,50,15.50
+102,A-02,Destornillador Phillips,120,8.75
+103,B-01,Cinta métrica 5m,2,20.00
+104,B-02,"Llave inglesa 10""",45,25.99
+105,C-01,Taladro inalámbrico,8,120.00
+106,D-01,Tornillos para madera (caja),200,5.25
+107,C-02,Sierra de mano,30,35.75
+108,D-02,Juego de brocas para metal,60,45.00
+109,A-03,Lámpara de trabajo LED,90,18.50
+110,B-03,Cerradura de seguridad,25,85.00
+111,E-01,Pintura blanca 1 galón,15,55.00
+112,E-02,"Brocha 2""",70,7.50
+113,E-03,Rodillo para pintar,85,11.00
+114,D-03,Lija fina (paquete),150,3.99
+115,D-04,Clavos de acero (kg),180,6.50
+116,A-04,Alicates de corte,40,19.25
+117,A-05,Pinzas de punta larga,35,16.80
+118,B-04,Nivel de burbuja 60cm,22,29.50
+119,D-05,Guantes de trabajo,110,9.99
+120,D-06,Mascara de polvo,95,4.75
+121,F-01,Pala de jardinería,18,32.00
+122,F-02,Rastrillo de jardín,12,28.00
+123,G-01,Manguera de jardín 15m,28,45.00
+124,G-02,Grifo de jardín,65,14.50
+125,H-01,"Tubo PVC 1/2"" (metro)",250,2.10
+126,H-02,"Codo PVC 1/2""",300,0.85
+127,I-01,Sellador de silicona,55,10.50
+128,I-02,Cinta de teflón,90,2.25
+129,J-01,Masilla para pared,42,13.00
+130,J-02,Espátula para masilla,78,6.50
+131,K-01,Cemento 50kg,10,80.00
+132,K-02,Arena de construcción (saco),8,15.00
+133,L-01,Bloque de concreto,15,5.50
+134,M-01,Azulejo de cerámica (m2),60,22.00
+135,M-02,Adhesivo para azulejos (saco),25,28.00
+136,A-06,Martillo de goma,33,10.00
+137,N-01,Cincel de albañil,28,12.50
+138,B-05,Flexómetro 3m,105,9.50
+139,D-07,Cutter retráctil,88,7.99
+140,D-08,Hojas de repuesto para cutter,140,4.25
+141,B-06,"Llave de tubo 12""",19,45.00
+142,G-03,Bomba de agua manual,7,75.00
+143,B-07,Candado de acero,48,21.50
+144,B-08,Cadena de seguridad (metro),50,9.00
+145,A-07,Linterna frontal,65,17.50
+146,C-03,Extensión eléctrica 10m,30,29.99
+147,C-04,Regleta con supresor,44,14.50
+148,I-03,Fusibles surtidos (caja),80,10.00
+149,I-04,Cinta aislante,115,2.50
+150,A-08,Timbre inalámbrico,16,65.00
+200,T-01,Martillo de dos bolas con mango flexible,21,41.00
